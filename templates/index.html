@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>CodePen - Play, Pause, Stop Youtube Embeded Iframe</title>
+	<link rel="stylesheet" href="./style.css">
+
+</head>
+<style>
+	table {
+		font-family: arial, sans-serif;
+		border-collapse: collapse;
+		width: 100%;
+	}
+
+	td,
+	th {
+		border: 1px solid #dddddd;
+		text-align: left;
+		padding: 8px;
+	}
+
+	tr:nth-child(even) {
+		background-color: #dddddd;
+	}
+</style>
+
+<body>
+	<form action="{{ url_for("requests_for_song")}}" method="post">
+		<label for="firstname">SongName Name:</label>
+		<input type="text" id="songname" name="sname" placeholder="songname">
+
+		<button type="submit">Search</button>
+	</form>
+
+
+	<br>
+	<br>
+	{{table | safe}}
+
+	<br><br>
+	<audio controls>
+
+		<source src="{{ audio_url }}" type="audio/mpeg">
+		Your browser does not support the audio element.
+
+	</audio>
+
+
+
+</body>
+
+</html>
