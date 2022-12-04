@@ -18,12 +18,12 @@ print(bestaudio.url)
 
 '''
 
-'''from youtubesearchpython import VideosSearch
+from youtubesearchpython import VideosSearch
 
 
 #print(x['result'][0]['richThumbnail']['url'])
 
-videosSearch = VideosSearch('skyfall', limit = 2)
+videosSearch = VideosSearch('ram siya ram', limit = 2)
 
 song_search_youtube = videosSearch.result()
 
@@ -33,12 +33,12 @@ result = song_search_youtube['result'][0]
 
 print(result ['channel']['name'])
 print(result['thumbnails'][0]['url'])
-print(result['link'])'''
+print(result['link'])
 
-
+'''
 import pafy
 
-url = 'https://www.youtube.com/watch?v=lnRLg9ouVHc&ab_channel=T3NZU'
+url = 'https://www.youtube.com/watch?v=u9yg83-gSRY'
 video = pafy.new(url)
 
 #print(video)
@@ -51,6 +51,6 @@ print("\n")
 
 
 bestaudio = video.getbestaudio()
-streamSongUrl =  bestaudio.url
+#streamSongUrl =  bestaudio.url
 
-print(streamSongUrl)
+print(bestaudio)'''

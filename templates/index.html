@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<title>CodePen - Play, Pause, Stop Youtube Embeded Iframe</title>
 	<link rel="stylesheet" href="./style.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 <style>
@@ -24,9 +25,20 @@
 	tr:nth-child(even) {
 		background-color: #dddddd;
 	}
+
+	.material-symbols-outlined {
+		font-variation-settings:
+			'FILL'0,
+			'wght'400,
+			'GRAD'0,
+			'opsz'48
+	}
 </style>
 
+
+
 <body>
+	<!--
 	<form action="{{ url_for("requests_for_song")}}" method="post">
 		<label for="firstname">SongName Name:</label>
 		<input type="text" id="songname" name="sname" placeholder="songname">
@@ -45,8 +57,44 @@
 		<source src="{{ audio_url }}" type="audio/mpeg">
 		Your browser does not support the audio element.
 
-	</audio>
+	</audio>-->
 
+	<div class="title">
+		<p> RAGE</p>
+		<p class="pColor"> MUSIC</p>
+	</div>
+
+	<div class="inputSearch">
+		<input type="text" style="font-family: FontAwesome;" placeholder="&#xf002; Search" class="frontPageSearch">
+	</div>
+
+
+
+	<div class="songs">
+		<p>Songs</p>
+	</div>
+
+	<div class="container">
+		<div class="c1">
+			<img src="https://i.ytimg.com/vi/HLIUL-qwp6o/sddefault.jpg" alt="">
+			<p>Careless Whisper</p>
+
+			<p class="singer">George Michael</p>
+
+		</div>
+		<div class="c2">
+			<img src="https://i.ytimg.com/vi/vtNJMAyeP0s/maxresdefault.jpg" alt="">
+			<p>Tourner Dans Le Vide</p>
+
+			<p class="singer">Indila</p>
+		</div>
+		<div class="c3"></div>
+		<div class="c4"></div>
+		<div class="c5"></div>
+		<div class="c6"></div>
+	</div>
+
+	<!--<img src="https://i.ytimg.com/vi/HLIUL-qwp6o/sddefault.jpg" alt="">-->
 
 
 </body>
