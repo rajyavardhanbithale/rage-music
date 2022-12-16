@@ -3,28 +3,14 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>CodePen - Play, Pause, Stop Youtube Embeded Iframe</title>
-	<link rel="stylesheet" href="./style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RageMusic</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" >
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 <style>
-	table {
-		font-family: arial, sans-serif;
-		border-collapse: collapse;
-		width: 100%;
-	}
 
-	td,
-	th {
-		border: 1px solid #dddddd;
-		text-align: left;
-		padding: 8px;
-	}
-
-	tr:nth-child(even) {
-		background-color: #dddddd;
-	}
 
 	.material-symbols-outlined {
 		font-variation-settings:
@@ -38,26 +24,7 @@
 
 
 <body>
-	<!--
-	<form action="{{ url_for("requests_for_song")}}" method="post">
-		<label for="firstname">SongName Name:</label>
-		<input type="text" id="songname" name="sname" placeholder="songname">
 
-		<button type="submit">Search</button>
-	</form>
-
-
-	<br>
-	<br>
-	{{table | safe}}
-
-	<br><br>
-	<audio controls>
-
-		<source src="{{ audio_url }}" type="audio/mpeg">
-		Your browser does not support the audio element.
-
-	</audio>-->
 
 	<div class="title">
 		<p> RAGE</p>
@@ -75,23 +42,21 @@
 	</div>
 
 	<div class="container">
-		<div class="c1">
+		<div>
 			<img src="https://i.ytimg.com/vi/HLIUL-qwp6o/sddefault.jpg" alt="">
 			<p>Careless Whisper</p>
 
 			<p class="singer">George Michael</p>
 
 		</div>
-		<div class="c2">
+	
+		<div>
 			<img src="https://i.ytimg.com/vi/vtNJMAyeP0s/maxresdefault.jpg" alt="">
 			<p>Tourner Dans Le Vide</p>
 
 			<p class="singer">Indila</p>
 		</div>
-		<div class="c3"></div>
-		<div class="c4"></div>
-		<div class="c5"></div>
-		<div class="c6"></div>
+
 	</div>
 
 	<!--<img src="https://i.ytimg.com/vi/HLIUL-qwp6o/sddefault.jpg" alt="">-->

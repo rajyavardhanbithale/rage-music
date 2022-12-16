@@ -24,16 +24,31 @@ function handlePlay() {
 
 music.onloadeddata = function () {
     seekbar.max = music.duration
-    var dm =  Math.floor((music.duration / 60));
-    var ds = Math.floor(music.duration - dm * 60);
-    duration.innerHTML = dm + ':0' + ds
+    var minutes = Math.floor((music.duration / 60));
+    var seconds = Math.floor(music.duration - minutes * 60);
+  
+    if (minutes < 10) {
+        minutes += "0";
+    }
+
+    duration.innerHTML = minutes/10 + ':0' + seconds
 }
 music.ontimeupdate = function () { seekbar.value = music.currentTime }
 handleSeekBar = function () { music.currentTime = seekbar.value }
 music.addEventListener('timeupdate', function () {
-    var cs = parseInt(music.currentTime % 60)
-    var cm = parseInt((music.currentTime / 60) % 60)
-    currentTime.innerHTML = cm + ':' + cs
+
+
+    var mins = Math.floor(music.currentTime / 60);
+    if (mins < 10) {
+      mins = '0' + String(mins);
+    }
+    var secs = Math.floor(music.currentTime % 60);
+    if (secs < 10) {
+      secs = '0' + String(secs);
+    }
+
+    currentTime.innerHTML = mins + ':' + secs
+    
 }, false)
 
 
