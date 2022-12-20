@@ -1,6 +1,7 @@
 
 from youtubesearchpython import VideosSearch
 from youtubesearchpython import *
+import generateStaticPage as gsp
 
 
 class Search:
@@ -33,14 +34,14 @@ class Search:
             print('Title    : ',music['title'].replace('Video','Audio'))
             print('ID       : ',music['id'])
             print('Duration : ', str("{:.2f}".format(int(music['duration']['secondsText'])/60)).replace('.',':') )    #
-            print('Thumbnail: ',music['thumbnails'][4]['url'])
+            print('Thumbnail: ',music['thumbnails'][self.thumbnailExtractUrl()]['url'])
             print('Uploader : ',music['channel']['name'])
             print('Upl. Date: ',music['uploadDate'])
             print('Audio URL: ',self.musicExtractUrl())
 
-            return music['title'], music['id'], str("{:.2f}".format(int(music['duration']['secondsText'])/60)).replace('.',':'), music['thumbnails'][4]['url'], music['channel']['name'], music['uploadDate'], self.musicExtractUrl()
+            return music['title'], music['id'], str("{:.2f}".format(int(music['duration']['secondsText'])/60)).replace('.',':'),music['thumbnails'][self.thumbnailExtractUrl()]['url'], music['channel']['name'], music['uploadDate'], self.musicExtractUrl()
         else:
-            return music['title'], music['id'], str("{:.2f}".format(int(music['duration']['secondsText'])/60)).replace('.',':'), music['thumbnails'][4]['url'], music['channel']['name'], music['uploadDate'], self.musicExtractUrl()
+            return music['title'], music['id'], str("{:.2f}".format(int(music['duration']['secondsText'])/60)).replace('.',':'),music['thumbnails'][self.thumbnailExtractUrl()]['url'], music['channel']['name'], music['uploadDate'], self.musicExtractUrl()
 
     def musicExtractUrl(self):
 
@@ -57,11 +58,26 @@ class Search:
                     return dat['streamingData']['adaptiveFormats'][x]['url']
 
 
+    def thumbnailExtractUrl(self):
 
-run = Search()
+        dat = self.extractJson()
 
-print(run.extractJson('betterca'))
+        thumbnailsSize = []
+        for x in range(len(dat['thumbnails'])):
+            refSzie = dat['thumbnails'][x]['width'] + dat['thumbnails'][x]['height']
+            thumbnailsSize.append(refSzie)
 
+        return thumbnailsSize.index(max(thumbnailsSize))
+
+
+
+run = Search('No time to die')
+
+
+parserFinal = run.processJson(True)
+print(parserFinal[6])
+'''saveDynamic = gsp.buildPage(parserFinal[3],parserFinal[0],parserFinal[4],parserFinal[6],parserFinal[1])
+saveDynamic.build()'''
 
 '''
 

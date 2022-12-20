@@ -11,11 +11,11 @@
 <body>
     <div class="player">
         <div class="cover">
-            <img src="{{ musicThumbnail }}" alt="">
+            <img src="https://i.ytimg.com/vi_webp/iQpwyeeEk8Q/sddefault.webp" alt="">
         </div>
         <div class="info">
-            <div class="title">{{ musicName }}</div>
-            <div class="singer">{{ singerName }}</div>
+            <div class="title">Drive Forever</div>
+            <div class="singer">T3NZU - Topic</div>
         </div>
         <div class="volume-box">
             <span class="volume-down"><i class="material-icons">remove</i></span>
@@ -32,7 +32,7 @@
             <input type="range" step="1" class="seekbar" value="0" min="0" max="100" oninput="handleSeekBar()">
 
             <audio class="music-element">
-                <source src="{{ musicUrl }}" type="audio/mp3">
+                <source src="https://rr4---sn-gwpa-civs.googlevideo.com/videoplayback?expire=1671485146&ei=eYKgY4KIOsLDrtoPo4GKgAk&ip=49.36.17.235&id=o-ABytJdnOk5MDF07Crb7qdsd5UqHW-r_1N02jqpBgMwV5&itag=140&source=youtube&requiressl=yes&mh=Ex&mm=31%2C29&mn=sn-gwpa-civs%2Csn-gwpa-qxay&ms=au%2Crdu&mv=m&mvi=4&pl=22&gcr=in&initcwndbps=152500&vprv=1&mime=audio%2Fmp4&gir=yes&clen=2358353&dur=145.555&lmt=1670952159943044&mt=1671463068&fvip=6&keepalive=yes&fexp=24001373%2C24007246&c=ANDROID&txp=2318224&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cgcr%2Cvprv%2Cmime%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIgTaPDXBPXw3lRKxuM6gBCXj8M4x53G7N1Uc2vmvc2C_wCIQCrti3_E7I1L7NgvMV9jm4ThBAgPlznIG4gLQYLONbAPQ%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRAIgFWdJGsZeXlcwJ90j7IWD2b2ufzTWuNyI8v4-WeeZVPgCIBAF4wcKzxRRbEPbwlOSzvwSvbYk2piz8ZjhhmFWOaRw" type="audio/mp3">
             </audio>
             <span class="current-time">0:0</span><span class="duration">0:0</span>
             <span class="play" onclick="handlePlay()">

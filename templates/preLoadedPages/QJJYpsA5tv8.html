@@ -11,11 +11,11 @@
 <body>
     <div class="player">
         <div class="cover">
-            <img src="{{ musicThumbnail }}" alt="">
+            <img src="https://i.ytimg.com/vi_webp/QJJYpsA5tv8/sddefault.webp" alt="">
         </div>
         <div class="info">
-            <div class="title">{{ musicName }}</div>
-            <div class="singer">{{ singerName }}</div>
+            <div class="title">Bring Me The Horizon - Can You Feel My Heart</div>
+            <div class="singer">BMTHOfficialVEVO</div>
         </div>
         <div class="volume-box">
             <span class="volume-down"><i class="material-icons">remove</i></span>
@@ -32,7 +32,7 @@
             <input type="range" step="1" class="seekbar" value="0" min="0" max="100" oninput="handleSeekBar()">
 
             <audio class="music-element">
-                <source src="{{ musicUrl }}" type="audio/mp3">
+                <source src="https://rr7---sn-gwpa-civk.googlevideo.com/videoplayback?expire=1671484483&ei=43-gY6TGF5SV4t4PwpuI-A0&ip=49.36.17.235&id=o-APXiSJq6pGDDgMT3yDAY_5MVq7-jFD1lqH8VeHBqjM1S&itag=140&source=youtube&requiressl=yes&mh=9s&mm=31%2C29&mn=sn-gwpa-civk%2Csn-gwpa-qxae7&ms=au%2Crdu&mv=m&mvi=7&pl=22&gcr=in&initcwndbps=160000&vprv=1&mime=audio%2Fmp4&gir=yes&clen=3694710&dur=228.252&lmt=1556992127293612&mt=1671462592&fvip=5&keepalive=yes&fexp=24001373%2C24007246&c=ANDROID&txp=5535432&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cgcr%2Cvprv%2Cmime%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIgW8CgA2bnXzYLH0n9oUNMTBW0Tcfwew7IEVRniN1Gbw0CIQCIj1aEOXnWZ3wGgU8lS80n9jutmsOSeA4e0byUEHRf9A%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRAIgXb7ah-sv4iqkdfNG9WYEm8c-6IRQrBau8AYgt-zXBdUCIBlwlR2gtPzmYsoIPO3gSfxBIRrdbj9Gcdc63fhQcGRv" type="audio/mp3">
             </audio>
             <span class="current-time">0:0</span><span class="duration">0:0</span>
             <span class="play" onclick="handlePlay()">

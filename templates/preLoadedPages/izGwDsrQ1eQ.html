@@ -11,11 +11,11 @@
 <body>
     <div class="player">
         <div class="cover">
-            <img src="{{ musicThumbnail }}" alt="">
+            <img src="https://i.ytimg.com/vi_webp/izGwDsrQ1eQ/sddefault.webp" alt="">
         </div>
         <div class="info">
-            <div class="title">{{ musicName }}</div>
-            <div class="singer">{{ singerName }}</div>
+            <div class="title">George Michael - Careless Whisper (Official Video)</div>
+            <div class="singer">georgemichaelVEVO</div>
         </div>
         <div class="volume-box">
             <span class="volume-down"><i class="material-icons">remove</i></span>
@@ -32,7 +32,7 @@
             <input type="range" step="1" class="seekbar" value="0" min="0" max="100" oninput="handleSeekBar()">
 
             <audio class="music-element">
-                <source src="{{ musicUrl }}" type="audio/mp3">
+                <source src="https://rr2---sn-gwpa-cive.googlevideo.com/videoplayback?expire=1671482880&ei=oHmgY9TfJJS5z7sP-OyoyAw&ip=49.36.17.235&id=o-ACOEe6vN6GaTtuS_gfqHHxn_OAlTtrl6cYQhZDSrNeOA&itag=140&source=youtube&requiressl=yes&mh=Bh&mm=31%2C29&mn=sn-gwpa-cive%2Csn-gwpa-qxak&ms=au%2Crdu&mv=m&mvi=2&pl=22&gcr=in&initcwndbps=176250&vprv=1&mime=audio%2Fmp4&gir=yes&clen=4867985&dur=300.744&lmt=1637197818916001&mt=1671460905&fvip=3&keepalive=yes&fexp=24001373%2C24007246&c=ANDROID&txp=5532434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cgcr%2Cvprv%2Cmime%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRAIgZLLWEwGIE4DAt_MtRGCDB7JvXsGt8pUERXO32fReIRQCIEfHdhuVGlGthaRg5A0IBLOLZLQEhIrpz_vMHnrHJofp&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIgCH637aTjnsSDgESgefVm3XytRoNLEjTLvpVBTaMoBeYCIQCoUfriQIQxuvB5rQAXRyUuBbqR3eqyi_-ZxBOeI-5otA%3D%3D" type="audio/mp3">
             </audio>
             <span class="current-time">0:0</span><span class="duration">0:0</span>
             <span class="play" onclick="handlePlay()">

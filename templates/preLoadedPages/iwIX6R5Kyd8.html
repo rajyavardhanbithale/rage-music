@@ -11,11 +11,11 @@
 <body>
     <div class="player">
         <div class="cover">
-            <img src="{{ musicThumbnail }}" alt="">
+            <img src="https://i.ytimg.com/vi_webp/iwIX6R5Kyd8/sddefault.webp" alt="">
         </div>
         <div class="info">
-            <div class="title">{{ musicName }}</div>
-            <div class="singer">{{ singerName }}</div>
+            <div class="title">Eyedress - Something About You (Lyrics) ft. Dent May</div>
+            <div class="singer">Blissful Mind</div>
         </div>
         <div class="volume-box">
             <span class="volume-down"><i class="material-icons">remove</i></span>
@@ -32,7 +32,7 @@
             <input type="range" step="1" class="seekbar" value="0" min="0" max="100" oninput="handleSeekBar()">
 
             <audio class="music-element">
-                <source src="{{ musicUrl }}" type="audio/mp3">
+                <source src="https://rr2---sn-gwpa-civs.googlevideo.com/videoplayback?expire=1671484669&ei=nYCgY4KTEvn64-EP-96k0Ac&ip=49.36.17.235&id=o-ALjycj6yREOGklOh6BjuB2-9pyFU6hpzzXfzKhQrc56c&itag=140&source=youtube&requiressl=yes&mh=DM&mm=31%2C29&mn=sn-gwpa-civs%2Csn-gwpa-qxak&ms=au%2Crdu&mv=m&mvi=2&pl=22&initcwndbps=155000&vprv=1&mime=audio%2Fmp4&gir=yes&clen=2482782&dur=153.344&lmt=1633889138790901&mt=1671462592&fvip=8&keepalive=yes&fexp=24001373%2C24007246&c=ANDROID&txp=5432434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIhALis1w3OrsEeEZ4yeAhrGXM11C9Th1Pvdig6gwpNRP2mAiBLyT47zXbE-_ITvi0uvA8zHhIEDPu0VaVCp_dL8vd3dw%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRAIgEcaw1FNA1pk7kPHuT0AA1fLw4ix-uTEfNXvhFpc9jsgCIGidJCd8gYWOjMzI-MMHGKXXKvoL4vm1EnQcE5w0Tjw4" type="audio/mp3">
             </audio>
             <span class="current-time">0:0</span><span class="duration">0:0</span>
             <span class="play" onclick="handlePlay()">

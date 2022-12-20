@@ -11,11 +11,11 @@
 <body>
     <div class="player">
         <div class="cover">
-            <img src="{{ musicThumbnail }}" alt="">
+            <img src="https://i.ytimg.com/vi_webp/dwiaTmTDHWM/sddefault.webp" alt="">
         </div>
         <div class="info">
-            <div class="title">{{ musicName }}</div>
-            <div class="singer">{{ singerName }}</div>
+            <div class="title">No Make Up - Bilal Saeed Ft. Bohemia | Bloodline Music | Official Music Video</div>
+            <div class="singer">Desi Music Factory</div>
         </div>
         <div class="volume-box">
             <span class="volume-down"><i class="material-icons">remove</i></span>
@@ -32,7 +32,7 @@
             <input type="range" step="1" class="seekbar" value="0" min="0" max="100" oninput="handleSeekBar()">
 
             <audio class="music-element">
-                <source src="{{ musicUrl }}" type="audio/mp3">
+                <source src="https://rr4---sn-gwpa-pqge.googlevideo.com/videoplayback?expire=1671484039&ei=J36gY9jkKsLR9QPmjqOYDw&ip=49.36.17.235&id=o-AIhwfwGrbE_4kcUMHZ-kujQM7c-S_jU4h8dBm5CfA-rC&itag=140&source=youtube&requiressl=yes&mh=Oy&mm=31%2C29&mn=sn-gwpa-pqge%2Csn-gwpa-qxay&ms=au%2Crdu&mv=m&mvi=4&pl=22&initcwndbps=170000&vprv=1&mime=audio%2Fmp4&gir=yes&clen=3424572&dur=211.556&lmt=1574981553554951&mt=1671462103&fvip=7&keepalive=yes&fexp=24001373%2C24007246&c=ANDROID&txp=5531432&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAK6bOFqkkmZVezErKXplkfsshHU-BAwcDCcDcVeNJSjgAiEA4mflYIW6dCTlGJSGErngWYNNLwGhUAWidAyb3mO_MII%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRAIgI_bsrnUK17l69QlAUghHyxcgekDUpUMLfTDULw5oAyACICHgjEVlkP0ygbb5LS5eEpqntMolcHfThoLD8WaB21km" type="audio/mp3">
             </audio>
             <span class="current-time">0:0</span><span class="duration">0:0</span>
             <span class="play" onclick="handlePlay()">

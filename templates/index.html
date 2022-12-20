@@ -5,13 +5,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>RageMusic</title>
-	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" >
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 <style>
-
-
 	.material-symbols-outlined {
 		font-variation-settings:
 			'FILL'0,
@@ -25,14 +23,36 @@
 
 <body>
 
+	<script>
+		$('#picture').css("display", "none"); // hide at beginning
 
+		$('#button').click(function () {
+			$('#picture').css("display", "block"); // show button on click
+		});
+	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<button id="button">Show picture</button>
+	<br />
+	<img id="picture" src="https://dummyimage.com/600x400/000/fff" />
+	
 	<div class="title">
 		<p> RAGE</p>
 		<p class="pColor"> MUSIC</p>
 	</div>
 
 	<div class="inputSearch">
-		<input type="text" style="font-family: FontAwesome;" placeholder="&#xf002; Search" class="frontPageSearch">
+
+		<form action="{{ url_for("srch")}}" method="post">
+			<input type="text" style="font-family: FontAwesome;" placeholder="&#xf002; Search" class="frontPageSearch"
+				name="searchmusic">
+			<button type="submit" style="visibility: hidden;">Login</button>
+
+		</form>
+
+
+
+
 	</div>
 
 
@@ -44,12 +64,14 @@
 	<div class="container">
 		<div>
 			<img src="https://i.ytimg.com/vi/HLIUL-qwp6o/sddefault.jpg" alt="">
-			<p>Careless Whisper</p>
+			<a href="preLoadedPages/izGwDsrQ1eQ">
+				<p>Careless Whisper</p>
+			</a>
 
 			<p class="singer">George Michael</p>
 
 		</div>
-	
+
 		<div>
 			<img src="https://i.ytimg.com/vi/vtNJMAyeP0s/maxresdefault.jpg" alt="">
 			<p>Tourner Dans Le Vide</p>

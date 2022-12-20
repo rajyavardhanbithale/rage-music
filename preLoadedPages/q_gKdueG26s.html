@@ -11,11 +11,11 @@
 <body>
     <div class="player">
         <div class="cover">
-            <img src="{{ musicThumbnail }}" alt="">
+            <img src="https://i.ytimg.com/vi/q_gKdueG26s/sddefault.jpg" alt="">
         </div>
         <div class="info">
-            <div class="title">{{ musicName }}</div>
-            <div class="singer">{{ singerName }}</div>
+            <div class="title">Migos - Open It Up (Audio)</div>
+            <div class="singer">MigosVEVO</div>
         </div>
         <div class="volume-box">
             <span class="volume-down"><i class="material-icons">remove</i></span>
@@ -32,7 +32,7 @@
             <input type="range" step="1" class="seekbar" value="0" min="0" max="100" oninput="handleSeekBar()">
 
             <audio class="music-element">
-                <source src="{{ musicUrl }}" type="audio/mp3">
+                <source src="https://rr3---sn-gwpa-civr.googlevideo.com/videoplayback?expire=1671284856&ei=GHSdY42bLc-5rtoP5-2usAQ&ip=49.43.42.237&id=o-APwsMCSXt_55mYjbxzbsQINwdBPzh2NAg622fKKBAE8w&itag=140&source=youtube&requiressl=yes&mh=29&mm=31%2C29&mn=sn-gwpa-civr%2Csn-gwpa-cvhe7&ms=au%2Crdu&mv=m&mvi=3&pl=22&gcr=in&initcwndbps=268750&vprv=1&mime=audio%2Fmp4&gir=yes&clen=4005848&dur=247.478&lmt=1640363856169079&mt=1671262897&fvip=4&keepalive=yes&fexp=24001373%2C24007246&c=ANDROID&txp=5532434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cgcr%2Cvprv%2Cmime%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRAIgXOIC5dy-4NTqvtHBZRqCqseLPAoOBn3ev6B-Rhl4L1YCIBynNfcHv_xIifZMPeDYoluoznr8bwwJ9-9UnYEQzKbI&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRAIgee-4t-usaRcexV70xbuTtvnEFYO7xtbQ3xBnOcA9BzwCIEijgjSrq00H0j8rFEpk8ia4woyDd8xyHLLUheKnNYkw" type="audio/mp3">
             </audio>
             <span class="current-time">0:0</span><span class="duration">0:0</span>
             <span class="play" onclick="handlePlay()">

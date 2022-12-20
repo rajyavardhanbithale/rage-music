@@ -11,11 +11,11 @@
 <body>
     <div class="player">
         <div class="cover">
-            <img src="{{ musicThumbnail }}" alt="">
+            <img src="https://i.ytimg.com/vi_webp/BX0lKSa_PTk/sddefault.webp" alt="">
         </div>
         <div class="info">
-            <div class="title">{{ musicName }}</div>
-            <div class="singer">{{ singerName }}</div>
+            <div class="title">Oliver Tree & Robin Schulz - Miss You [Official Music Video]</div>
+            <div class="singer">Oliver Tree</div>
         </div>
         <div class="volume-box">
             <span class="volume-down"><i class="material-icons">remove</i></span>
@@ -32,7 +32,7 @@
             <input type="range" step="1" class="seekbar" value="0" min="0" max="100" oninput="handleSeekBar()">
 
             <audio class="music-element">
-                <source src="{{ musicUrl }}" type="audio/mp3">
+                <source src="https://rr7---sn-gwpa-pqge.googlevideo.com/videoplayback?expire=1671484302&ei=Ln-gY521A8LS3LUP__ik-A0&ip=49.36.17.235&id=o-ADr4ioxpg0nu4f6ezXT6pEZ6psmp1o8_mBs1HXhMKcwe&itag=140&source=youtube&requiressl=yes&mh=2a&mm=31%2C29&mn=sn-gwpa-pqge%2Csn-gwpa-qxak&ms=au%2Crdu&mv=m&mvi=7&pl=22&initcwndbps=167500&vprv=1&mime=audio%2Fmp4&gir=yes&clen=2738669&dur=169.180&lmt=1671405082033018&mt=1671462356&fvip=5&keepalive=yes&fexp=24001373%2C24007246&c=ANDROID&txp=5532434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIhANL_87GZPkO-MZEwX-OMkGg4nQZwWbGo3-7fsRS6jv4CAiBvMMVXrVxfLZ9aVVg2uiZfBxqLCGn6Y0_PaS66QngNlw%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIhAJLuOy8X9o3-yMi9m7TvnrwZOnpW_5cfaOmMU05T8Lx3AiB5VnEnc8bKz49Cir-NVRYdOW8xNjM-w-D4IqsPAbsRrQ%3D%3D" type="audio/mp3">
             </audio>
             <span class="current-time">0:0</span><span class="duration">0:0</span>
             <span class="play" onclick="handlePlay()">

@@ -111,6 +111,14 @@ def musicExtractUrl(jsonData):
 
                 return dat['streamingData']['adaptiveFormats'][x]['url']
 
+def thumbnailExtractUrl():
+	thumbnailsSize = []
+	for x in range(len(music['thumbnails'])):
+		refSzie = music['thumbnails'][x]['width'] + music['thumbnails'][x]['height']
+		thumbnailsSize.append(refSzie)
+
+	return thumbnailsSize.index(max(thumbnailsSize))
+
 
 music = Video.get(f"https://music.youtube.com/watch?v=yBm4K00SMEk", mode = ResultMode.json, get_upload_date=True)
 print(music)
@@ -118,10 +126,16 @@ print(music)
 print('Title    : ',music['title'])
 print('ID       : ',music['id'])
 print('Duration : ', str("{:.2f}".format(int(music['duration']['secondsText'])/60)).replace('.',':') )    #
-print('Thumbnail: ',music['thumbnails'][4]['url'])
+print('Thumbnail: ',music['thumbnails'][thumbnailExtractUrl()]['url'])
 print('Uploader : ',music['channel']['name'])
 print('Upl. Date: ',music['uploadDate'])
 print('Audio URL: ',musicExtractUrl(music))
+
+
+
+print()
+
+
 
 
 

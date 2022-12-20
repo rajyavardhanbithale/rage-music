@@ -11,11 +11,11 @@
 <body>
     <div class="player">
         <div class="cover">
-            <img src="{{ musicThumbnail }}" alt="">
+            <img src="https://i.ytimg.com/vi/BboMpayJomw/sddefault.jpg?v=5f7371ef" alt="">
         </div>
         <div class="info">
-            <div class="title">{{ musicName }}</div>
-            <div class="singer">{{ singerName }}</div>
+            <div class="title">Billie Eilish - No Time To Die</div>
+            <div class="singer">BillieEilishVEVO</div>
         </div>
         <div class="volume-box">
             <span class="volume-down"><i class="material-icons">remove</i></span>
@@ -32,7 +32,7 @@
             <input type="range" step="1" class="seekbar" value="0" min="0" max="100" oninput="handleSeekBar()">
 
             <audio class="music-element">
-                <source src="{{ musicUrl }}" type="audio/mp3">
+                <source src="https://rr3---sn-gwpa-pqge.googlevideo.com/videoplayback?expire=1671483129&ei=mXqgY8bPCbi9rtoPk--fmAo&ip=49.36.17.235&id=o-ALNm3ODeAfRlhzjCdQnCqTSekoAtH3tGrrfc-MvsnBOa&itag=140&source=youtube&requiressl=yes&mh=Zb&mm=31%2C29&mn=sn-gwpa-pqge%2Csn-gwpa-qxak&ms=au%2Crdu&mv=m&mvi=3&pl=22&gcr=in&initcwndbps=193750&vprv=1&mime=audio%2Fmp4&gir=yes&clen=3873925&dur=239.328&lmt=1631619290829886&mt=1671461154&fvip=8&keepalive=yes&fexp=24001373%2C24007246&c=ANDROID&txp=5511222&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cgcr%2Cvprv%2Cmime%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAMlfrutbame_JKKAtlMO0jCD8NrSkGIPaKP-QaLBioEnAiEAgrihhyndSwA-zydzfi_j17zMxXx0sn_Ysa4AjRMrk1Y%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIgSDPrt2NmojCMv8IDsSskS-dKmnq7Iufc8mGtV32TUagCIQDN2Z0y3e3bGIuC5ZZ9BbTvufQp7bE_i5UPJD8J4FDUsg%3D%3D" type="audio/mp3">
             </audio>
             <span class="current-time">0:0</span><span class="duration">0:0</span>
             <span class="play" onclick="handlePlay()">

@@ -31,7 +31,7 @@ music.onloadeddata = function () {
         minutes += "0";
     }
 
-    duration.innerHTML = minutes/10 + ':0' + seconds
+    duration.innerHTML = minutes/10 + ':' + seconds
 }
 music.ontimeupdate = function () { seekbar.value = music.currentTime }
 handleSeekBar = function () { music.currentTime = seekbar.value }
