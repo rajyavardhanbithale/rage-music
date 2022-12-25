@@ -62,11 +62,13 @@ def loadPlayer(mname):
     
     return parserFinal[1]
 
-@app.route('/', methods =["GET", "POST"])
+
+@app.route('/player/', methods =["GET", "POST"])
 def srch():
-    if request.method == "POST":
+    musicName =  request.args.get('playid', default = 1, type = str)
  
-       musicName = request.form.get("searchmusic")
+    #musicName = request.form.get("searchmusic")
+    print(musicName)
 
     saveIdFromlPTosrch = loadPlayer(musicName)
 

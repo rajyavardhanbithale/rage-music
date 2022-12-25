@@ -71,11 +71,11 @@ class Search:
 
 
 
-run = Search('No time to die')
+'''run = Search('No time to die')
 
 
 parserFinal = run.processJson(True)
-print(parserFinal[6])
+print(parserFinal[6])'''
 '''saveDynamic = gsp.buildPage(parserFinal[3],parserFinal[0],parserFinal[4],parserFinal[6],parserFinal[1])
 saveDynamic.build()'''
 

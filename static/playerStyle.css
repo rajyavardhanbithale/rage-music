@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #070B11;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    color: #fafafa;
+    user-select: none;
+}
+
+img {
+    margin: 25px;
+    height: 250px;
+    width: 250px;
+  
+
+    background-size: cover;
+    background-position: center;
+
+}
+
+.title {
+	align-items: center;
+	margin-top: 5%;
+	font-family: 'Zen Dots', cursive;
+	color: #ffffff;
+	text-align: center;
+	font-size: 2rem;
+    margin-bottom: -5vh;
+
+
+}
+
+.title p {
+
+	display: inline;
+
+}
+
+.repeat1{
+    nav-down: auto;
+}
+
+.title .pColor {
+	font-size: 1.2rem;
+
+	background: -webkit-linear-gradient(#4776E6, #8E54E9);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+
+.audio-container {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.audio-container>.audio-img {
+    width: 200px;
+    height: 200px;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+.audio-img-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    cursor: pointer;
+}
+/*
+.audio-img {
+    border: 6px solid #1F212C;
+    padding: 5px;
+    border-radius: 25%;
+    text-align: center;
+    width: 250px;
+    height: 250px;
+
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.audio-img::before {
+    content: "";
+    
+
+    background-image: conic-gradient(#DEDEDE 20deg,
+            transparent 120deg);
+    border-radius: 15px;
+    width: 150%;
+    height: 150%;
+    position: absolute;
+    z-index: -1;
+    animation: rotate 5s linear infinite;
+    
+}
+
+.audio-img::after {
+    content: "img";
+    width: 240px;
+    height: 240px;
+  
+    position: absolute;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    letter-spacing: 5px;
+
+    z-index: -1;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}*/
+
+
+.audio-img img {
+    border-radius: 25%;
+}
+
+h2 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+
+h6 {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    font-weight: 400;
+    color: #bcbcbc;
+}
+
+.audio-progress {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 60%;
+}
+
+.progress {
+    grid-column: 1 / -1;
+    margin-bottom: 0.8rem;
+    text-align: center;
+    background-color: #3d3a4b;
+    height: 0.4rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.progress-head {
+    position: absolute;
+    background-color: #fafafa;
+    height: 0rem;
+    width: 0rem;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -32%);
+    border-radius: 100%;
+    z-index: 2;
+    box-shadow: 0 0 0 0px #aaabf8;
+}
+
+.progress-bar {
+    background-color: #7E73D4;
+    height: 100%;
+    position: relative;
+    width: 0%;
+    border-radius: 0.8rem;
+}
+
+.current-time {
+    text-align: left;
+    margin-left: 0.5rem;
+}
+
+.duration {
+    text-align: end;
+    margin-right: 0.5rem;
+}
+
+.audio-btns {
+    width: 200px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3vh;
+}
+
+.btn {
+    cursor: pointer;
+    border: unset;
+    box-shadow: unset;
+    background-color: unset;
+    font-size: 1.6rem;
+    color: #1F212C;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play {
+
+    text-align: center;
+
+    padding: 1.2rem 1.4rem;
+    /* padding-left: 1.5rem; */
+}
+
+/*
+.roundbar{
+    margin-top: 15%;
+    margin-bottom: 15%;
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    background-color: #070B11;
+    transform: translate(0%,75%);
+    z-index: -1;
+    border-radius: 10%;
+
+}*/
+
+
+.playpause {
+
+
+    transition: 0.4s ease-in-out;
+}
+
+
+
+
+.playpause .button {
+    width: 40px;
+    height: 40px;
+    background: #f0f0f0;
+    color: #f0f0f0;
+    ;
+
+    transition: inherit;
+    clip-path: polygon(0 0, 50% 25%, 50% 75%, 50% 75%, 50% 25%, 100% 50%, 100% 50%, 0 100%);
+}
+
+.playpause.playing .button {
+    clip-path: polygon(0 0, 40% 0, 40% 100%, 60% 100%, 60% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+
+
+
+a,
+a:hover,
+a:visited,
+a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.2);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 50px auto;
+    padding: 20px;
+    color: #333;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+
+    background: rgba( 255, 255, 255, 0.5 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 16px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.popup .close:hover {
+    color: #070B11;
+}
+
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+@media screen and (max-width: 700px) {
+    .box {
+        width: 80%;
+    }
+
+    .popup {
+        width: 80%;
+    }
+}
+

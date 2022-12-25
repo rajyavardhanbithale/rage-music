@@ -1,48 +1,228 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto&amp;display=swap'>
-    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
-    <link rel="stylesheet" href="{{ url_for('static', filename='player.css') }}">    
-    <title>Document</title>
-</head>
-<body>
-    <div class="player">
-        <div class="cover">
-            <img src="{{ musicThumbnail }}" alt="">
-        </div>
-        <div class="info">
-            <div class="title">{{ musicName }}</div>
-            <div class="singer">{{ singerName }}</div>
-        </div>
-        <div class="volume-box">
-            <span class="volume-down"><i class="material-icons">remove</i></span>
-            <input type="range" class="volume-range" step="1" value="80" min="0" max="100"
-                oninput="music.volume = this.value/100">
-            <span class="volume-up"><i class="material-icons">add</i></span>
-        </div>
-        <div class="btn-box">
-            <i class="material-icons repeat" onclick="handleRepeat()">repeat</i>
-            <i class="material-icons favorite active" onclick="handleFavorite()">favorite</i>
-            <i class="material-icons volume" onclick="handleVolume()">volume_up</i>
-        </div>
-        <div class="music-box">
-            <input type="range" step="1" class="seekbar" value="0" min="0" max="100" oninput="handleSeekBar()">
 
-            <audio class="music-element">
-                <source src="{{ musicUrl }}" type="audio/mp3">
-            </audio>
-            <span class="current-time">0:0</span><span class="duration">0:0</span>
-            <span class="play" onclick="handlePlay()">
-                <i class="material-icons">play_arrow</i>
-            </span>
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='playerStyle.css') }}">
+
+    <script src="https://kit.fontawesome.com/860e7596f3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+
+    <title>Mini Music Player</title>
+</head>
+
+<body>
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2>Aww, Snap</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                Stay tuned for the "Change Track" Feature in the next release version. 
+            </div>
         </div>
     </div>
-  <!-- partial -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
-    <script  src="{{ url_for('static', filename='script.js') }}"></script>
-  
+    <div class="audio-container ">
+        <div class="title">
+            <p> RAGE</p>
+            <p class="pColor"> MUSIC</p>
+        </div>
+
+
+        <div class="audio-img-wrapper">
+            <div class="audio-img">
+                <img src="https://images.unsplash.com/photo-1525362081669-2b476bb628c3?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg"
+                    alt="" class="img">
+            </div>
+            <h2 class="audio-title">Title of audio</h2>
+            <h6 class="audio-singer">Singer name</h6>
+
+
+        </div>
+
+
+
+
+        <div class="audio-progress">
+            <div class="progress">
+                <div class="progress-bar"></div>
+                <div class="progress-head"></div>
+            </div>
+            <div class="current-time">00:00</div>
+            <div class="duration">00:00</div>
+        </div>
+
+
+        <div class="audio-btns playpause">
+            <button class="btn shuffle " onclick="location.href='#popup1';">
+                <i class="fa-solid fa-shuffle"></i>
+            </button>
+
+            <button class="btn skip-back" onclick="location.href='#popup1';">
+                <i class="fa-solid fa-backward-step"></i>
+            </button>
+
+            <button class="btn play button">
+                <span> <i class="fa-solid fa-play"></i> </span>
+            </button>
+
+            <button class="btn skip-forward" onclick="location.href='#popup1';">
+                <i class="fa-solid fa-forward-step"></i>
+            </button>
+
+            <!-- skip-back skip-forward-->
+            <button class="btn repeat">
+                <i class="fa-solid fa-repeat repeat1"></i>
+            </button>
+        </div>
+
+    </div>
+
+    <!--===== MAIN JS =====
+    <script src="./playerMain.js"></script>-->
+    <script>
+        const playBtn = document.querySelector(".play"),
+            //skipForward = document.querySelector(".skip-forward"),
+            //skipBack = document.querySelector(".skip-back"),
+
+            progressBarContainer = document.querySelector('.progress'),
+            progressBar = document.querySelector('.progress-bar'),
+            progressHead = document.querySelector('.progress-head'),
+
+            currentTimeHtml = document.querySelector(".current-time"),
+            durationHtml = document.querySelector(".duration"),
+
+            playIcon = document.querySelector('.fa-play'),
+            img = document.querySelector('.img'),
+            title = document.querySelector(".audio-title"),
+            singer = document.querySelector(".audio-singer");
+        playpause = document.querySelector('.playpause');
+        repeatButton = document.querySelector('.repeat');
+
+        this.tracks = [{
+                name: "{{ musicName }}",
+                artist: "{{ singerName }}",
+                cover: "{{ musicThumbnail }}",
+                source: "{{ musicUrl }}",
+            },
+
+        ];
+
+        // Initial state values
+        let audio = null,
+            barWidth = null,
+            duration = null,
+            currentTime = null,
+            isTimerPlaying = false,
+            currentTrackIndex = 0,
+            currentTrack = tracks[0];
+
+        // Set initial state values
+        audio = new Audio();
+        audio.src = currentTrack.source;
+        img.src = currentTrack.cover;
+        title.innerText = currentTrack.name;
+        singer.innerText = currentTrack.artist;
+
+        playBtn.addEventListener('click', () => {
+            playpause.classList.toggle('playing');
+            if (audio.paused) {
+                audio.play();
+                isTimerPlaying = true;
+            } else {
+                audio.pause();
+                isTimerPlaying = false;
+            }
+
+        });
+
+        repeatButton.addEventListener('click', () => {
+            const element = document.querySelector('.repeat1');
+            if (audio.loop == true) {
+
+                audio.loop = false;
+                element.style.color = "#1E202B";
+
+                console.log("no loop");
+
+            } else {
+                audio.loop = true;
+                element.style.color = "#aaabf8";
+                console.log("loop");
+
+            }
+        });
+
+
+        progressBarContainer.addEventListener('click', (x) => {
+            let maxduration = audio.duration;
+            let position = x.pageX - progressBarContainer.offsetLeft;
+            let percentage = (100 * position) / progressBarContainer.offsetWidth;
+            if (percentage > 100) percentage = 100;
+            if (percentage < 0) percentage = 0;
+            barWidth = percentage + "%";
+
+            audio.currentTime = (maxduration * percentage) / 100;
+            progressBar.style.width = `${barWidth}%`;
+            progressHead.style.setProperty("left", `${barWidth}%`);
+            img.src = currentTrack.cover;
+        });
+
+    
+
+        audio.ontimeupdate = function () {
+            if (audio.duration) {
+                barWidth = (100 / audio.duration) * audio.currentTime;
+
+                let durmin = Math.floor(audio.duration / 60);
+                let dursec = Math.floor(audio.duration - durmin * 60);
+                let curmin = Math.floor(audio.currentTime / 60);
+                let cursec = Math.floor(audio.currentTime - curmin * 60);
+
+                if (durmin < 10) durmin = "0" + durmin;
+
+                if (dursec < 10) dursec = "0" + dursec;
+
+                if (curmin < 10) curmin = "0" + curmin;
+
+                if (cursec < 10) cursec = "0" + cursec;
+
+                duration = durmin + ":" + dursec;
+                currentTime = curmin + ":" + cursec;
+
+                progressBar.style.width = `${barWidth}%`;
+                progressHead.style.setProperty("left", `${barWidth}%`)
+                currentTimeHtml.innerText = `${currentTime}`;
+                durationHtml.innerText = `${duration}`;
+
+                if (isTimerPlaying) {
+                    playIcon.classList.remove('fa-play');
+                    playIcon.classList.add('fa-pause');
+
+
+                } else {
+                    playIcon.classList.add('fa-play');
+                    playIcon.classList.remove('fa-pause');
+                }
+            }
+        };
+
+        audio.onended = function () {};
+
+        // Animations
+
+        gsap.from("body, h1, .audio-img, .audio-title, .audio-singer, .audio-btns", {
+            opacity: 0,
+            duration: 2,
+            delay: 1.5,
+            y: 25,
+            ease: "expo.out",
+            stagger: 0.2,
+        });
+    </script>
 </body>
+
 </html>
